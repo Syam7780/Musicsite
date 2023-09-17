@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=
+1.0">
+   <title>audio and video window</title>
+<style>*{margin:0px}
+body{
+background:black;
+ }
+.main{
+height:600px;
+width:500px;
+background:purple;
+position:fixed;
+margin:30px;
+margin-left:25px;
+border:7px outset gold;
+}
+.container {
+height:500px;
+width:400px;
+background:navy;
+margin:30px 50px ;
+border-radius:50px;
+position:fixed;
+}
+#audio{
+margin-top:20px;
+margin-left:50px;
+}
+#mp3{
+margin:10px 10px 0px 10px;
+background:slategrey;
+color:white;
+}
+label{
+margin-left:50px;
+color:cyan;
+ }
+#d{
+height:100px;
+width:100px;
+background-image:repeating-conic-gradient(magenta 30deg,
+cyan 60deg,cornsilk 90deg,red 120deg,green 150deg);
+animation:rotate 2s linear infinite normal;
+float:left;
+border-radius:50px;
+animation:rotate 2s linear infinite normal;
+ }
+
+.disc1{
+margin:20px;
+
+}
+.disc2{
+margin-left:140px;
+margin-top:20px;
+
+}
+#cd{
+margin-left:50px;
+height:150px;
+width:150px;
+background-image:repeating-radial-gradient(slategrey 30%,
+olive 60%,black 70%,red 80%,black 90%);
+margin-top:100px;
+margin-left:125px;
+border-radius:75px;
+border:2.5px solid ;
+border-image:repeating-radial-gradient(slategrey 30%,
+olive 60%,black 70%,red 80%,black 90%);
+border-image-slice:1;
+animation:boom 0.4s linear infinite normal;
+
+}
+.disc4{
+margin-top:-20px;
+margin-left:20px;
+
+}
+.disc5{
+margin-top:-20px;
+margin-left:160px;
+
+}
+.bar{
+height:10px;
+width:300px;
+margin-top:120px;
+margin-left:50px;
+border:3px double white;
+background: repeating-linear-gradient(red 20%, magenta 50%
+,green 80%,yellow 120%);
+border-radius:5px;
+}
+@keyframes rotate{
+from{
+transform:rotate(0deg);}
+to{
+transform:rotate(360deg);}
+
+}
+@keyframes boom{
+0%{background-image:repeating-radial-gradient(slategrey 30%,
+olive 60%,black 70%,red 80%);
+}
+33%{background-image:repeating-radial-gradient(slategrey 40%,
+olive 50%,black 80%,red 110%);
+}
+66%{background-image:repeating-radial-gradient(slategrey 20%,
+olive 30%,black 40%,red 70%);
+ }
+99%{background-image:repeating-radial-gradient(slategrey 20%,
+olive 30%,black 40%,red 60%,cyan 80%);
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="main">
+<label for="audio" ><b>AUDIO FILE </b></label>
+<input type="file" accept="/audio/*" id="mp3"
+ onchange="getaudio(event)">
+ <div class="container">
+<div class="disc1" id="d"> </div>
+<div class="disc2" id="d"> </div>
+<div class="disc3" id="cd">
+ 
+ </div>
+<div class="disc4" id="d"> </div>
+<div class="disc5" id="d"> </div>
+
+<div class="bar" > </div>
+
+<audio src=" " id="audio" controls  download=" ">
+
+</div>
+</div>
+<script>
+
+function getaudio(event){
+var audio=URL.createObjectURL(event.target.files[0]);
+ var play=document.getElementById("audio");
+ play.src=audio;
+ play.download=audio;
+
+  }
+
+</script>
+
+</body>
+</html>
